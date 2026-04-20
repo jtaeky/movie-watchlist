@@ -116,6 +116,41 @@ window.addEventListener("click", async e => {
 })
 
 
+const contactForm = document.getElementById("contact-form")
+
+
+if (contactForm) {
+    contactForm.addEventListener("submit", e => {
+        e.preventDefault()
+        const name = document.getElementById("name").value.trim()
+        const email = document.getElementById("email").value.trim()
+        const subject = document.getElementById("subject").value.trim()
+        const message = document.getElementById("message").value.trim()
+
+        if (!name || !email || !message) {
+            alert("Please fill in name, email, and message.")
+            return
+        }
+
+        const submission = {
+            id: Date.now(),
+            name,
+            email,
+            subject,
+            message,
+            date: new Date().toLocaleDateString()
+        }
+
+        const existing = JSON.parse(localStorage.getItem("contactSubmissions")) || []
+        existing.unshift(submission)
+        localStorage.setItem("contactSubmissions", JSON.stringify(existing))
+
+        document.getElementById("contact-success").style.display = "block"
+        contactForm.reset()
+    })
+}
+
+
 // window.addEventListener("click",async(e)=>{
 //     if(e.target.classList.contains("add-movie")){
 //         const id = e.target.dataset.id

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/style.css">
+        <script src="/script.js" defer></script>
+        <title>Contact</title>
+    </head>
+    <body>
+        <header>
+            <div id="title-bar">
+                <div id="header-wrapper">
+                    <h3>Movie Search</h3>
+                    <a href="/index.html"><p>Home</p></a>
+                </div>
+            </div>
+        </header>
+
+        <div id="contact-wrapper">
+            <h2>Contact Us</h2>
+            <form id="contact-form" novalidate>
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" placeholder="Your name" required>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-field">
+                    <label for="subject">Subject</label>
+                    <input id="subject" type="text" placeholder="What's this about?">
+                </div>
+                <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Your message..." required></textarea>
+                </div>
+                <p id="contact-success" class="contact-success">Message sent! We'll get back to you soon.</p>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </body>
+</html>
